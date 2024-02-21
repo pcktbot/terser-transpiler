@@ -16,7 +16,7 @@ if (!inputFilePath) {
   process.exit(1);
 }
 
-const outputFilePath = path.basename(inputFilePath);
+const outputFilePath = path.join(outputDir, path.basename(inputFilePath));
 const inputFileContent = fs.readFileSync(inputFilePath, 'utf8');
 
 transform(inputFileContent, {
